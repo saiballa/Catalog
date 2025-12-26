@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalog Project</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
     <header>
-        <h1>FreshFusion</h1>
+       <h1><a href="./index.html">FreshFusion</a></h1>
+        <div id="headerNavi">
+            <a href="./cart.html"><img src="./images/cartimage.jpg" alt="image"/><span>0</span></a>
+        </div>
     </header>
 
-    <main>
+
+    <main id="products">
         <div class="Products-header">
             <h2>Products</h2>
         </div>
@@ -24,27 +29,34 @@
             </div>
             <div id="ProductListContainer" class="products-list-container">
                 <div id="productSorting" class="product-sort">
-                    <div id="inputDiv">
-                        <input type="text" name="search" id="searchField" placeholder="Search product">
-                        <button id="searchProduct" onclick="searchProduct()">Search</button>
-                    </div>
                     <div id="sortDiv">
-                        <button onclick="defaultData()">default</button>
-                        <button onclick="rating()">top rated</button>
-                        <button onclick="descending()">high price products</button>
-                        <button onclick="ascending()">low price products</button>
+                        <select name="category" id="myselect" onchange="categoryOptionsList()">
+                            <option value="" selected>-- Select a category --</option>
+                        </select>
+                        <div id="inputDiv">
+                            <input type="text" name="search" id="searchField" placeholder="Search product">
+                            <button id="findProduct" onclick="searchProduct()">search</button>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="sort-buttons" onclick="defaultData()">default</button>
+                        <button class="sort-buttons" onclick="rating()">top rated</button>
+                    </div>
+                    <div>
+                        <button class="sort-buttons" onclick="descending()">high price products</button>
+                        <button class="sort-buttons" onclick="ascending()">low price products</button>
                     </div>
                 </div>
+                
                 <div id="productListDisplay" class="product-list-display">
-
+                    
                 </div>
             </div>
         
         </div>
-        <div id="loader" class="loading">
-                <p>Data Loading...</p>
-            </div>
     </main>
+    <div id="loader" class="loader">
+    </div>
 
     <script src="logic.js"></script>
     

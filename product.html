@@ -8,7 +8,10 @@
 </head>
 <body>
     <header>
-        <h1>FreshFusion</h1>
+        <h1><a href="./index.html">FreshFusion</a></h1>
+        <div id="headerNavi">
+            <a href="./cart.html"><img src="./images/cartimage.jpg" alt="image"/><span>0</span></a>
+        </div>
     </header>
 
     <section id="productDisplay">
@@ -16,6 +19,7 @@
             <img src="" alt="">
         </div>
         <div id="product" class="product-info">
+            <h2>product details</h2>
             <p id="productBrand" class="product-brand"></p>
             <p id="productTitle" class="product-title"></p>
             <p id="productTag" class="product-tags"></p>
@@ -25,16 +29,15 @@
 
             </div>
             <div id="productMoreDetails" class="moreDetails">
-                <h2>product details</h2>
                 <p id="productDescription" class="product-description"></p>
-                <h3>dimensions</h3>
+                <h3>Dimensions</h3>
                 <p id="dimensions"></p>
                 <h3>Available: <span></span></h3>
                 <p id="stockNo"></p>
                 <p id="returnPol"></p>
                 <p id="shipping"></p>
                 <p id="warranty"></p>
-
+                <button id="addCart" onclick="addCartButton()">add to cart</button>
             </div>
         </div>
         
@@ -43,8 +46,7 @@
         <h2>product not found</h2>
         <a href="index.html">Go back to home</a>
     </div>
-    <div id="loader" class="loading">
-        <p>Data Loading...</p>
+    <div id="loader" class="loader">
     </div>
 
     <script src="details.js"></script>
